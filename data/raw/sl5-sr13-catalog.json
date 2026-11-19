@@ -1,0 +1,191 @@
+{
+  "catalog": {
+    "uuid": "166bc7ac-f052-4011-b2c6-20d9a9cec7e4",
+    "metadata": {
+      "title": "OSCAL Catalog for NIST SP 800-161 Rev. 1 Update 1 Control SR-13",
+      "last-modified": "2026-06-23T00:00:00.000Z",
+      "version": "1.1 Update 1",
+      "oscal-version": "1.1.3",
+      "links": [
+        {
+          "href": "https://doi.org/10.6028/NIST.SP.800-161r1-upd1",
+          "rel": "canonical"
+        },
+        {
+          "href": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+          "rel": "license"
+        }
+      ],
+      "remarks": "Local OSCAL transcription of SR-13, which NIST SP 800-161 Rev. 1 Update 1 adds to its C-SCRM control set but which is not present in the NIST SP 800-53 Rev. 5 catalog. The transcription preserves every substantive requirement and the complete Supplemental C-SCRM Guidance. It makes two documented editorial normalizations: the apparent source typo 'Unique identify' is rendered as 'Unique identifier,' and the duplicated inline phrase 'review and update supplier inventory [Assignment: enterprise-defined frequency]' in item a.3 is omitted because item b states that requirement separately. The NIST publication linked above remains authoritative."
+    },
+    "groups": [
+      {
+        "id": "sr-161",
+        "title": "Supply Chain Risk Management (SP 800-161)",
+        "controls": [
+          {
+            "id": "sr-13",
+            "class": "SP800-161",
+            "title": "Supplier Inventory",
+            "params": [
+              {
+                "id": "sr-13_odp.01",
+                "label": "organization-defined parameters for determining the tier one supply chain"
+              },
+              {
+                "id": "sr-13_odp.02",
+                "label": "enterprise-defined frequency"
+              }
+            ],
+            "props": [
+              {
+                "name": "label",
+                "value": "SR-13"
+              },
+              {
+                "name": "sort-id",
+                "value": "sr-13"
+              },
+              {
+                "name": "source",
+                "ns": "https://sl5.org/ns/oscal",
+                "value": "NIST SP 800-161 Rev. 1 Update 1"
+              },
+              {
+                "name": "implementation-level",
+                "ns": "https://sl5.org/ns/oscal",
+                "value": "2"
+              },
+              {
+                "name": "implementation-level",
+                "ns": "https://sl5.org/ns/oscal",
+                "value": "3"
+              },
+              {
+                "name": "related-control",
+                "ns": "https://sl5.org/ns/oscal",
+                "value": "ra-9"
+              }
+            ],
+            "parts": [
+              {
+                "id": "sr-13_smt",
+                "name": "statement",
+                "parts": [
+                  {
+                    "id": "sr-13_smt.a",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "a."
+                      }
+                    ],
+                    "prose": "Develop, document, and maintain an inventory of suppliers that:",
+                    "parts": [
+                      {
+                        "id": "sr-13_smt.a.1",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "1."
+                          }
+                        ],
+                        "prose": "Accurately and minimally reflects the organization's tier one suppliers that may present a cybersecurity risk in the supply chain {{ insert: param, sr-13_odp.01 }};"
+                      },
+                      {
+                        "id": "sr-13_smt.a.2",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "2."
+                          }
+                        ],
+                        "prose": "Is at the level of granularity deemed necessary for assessing criticality and supply chain risk, tracking, and reporting;"
+                      },
+                      {
+                        "id": "sr-13_smt.a.3",
+                        "name": "item",
+                        "props": [
+                          {
+                            "name": "label",
+                            "value": "3."
+                          }
+                        ],
+                        "prose": "Documents the following information for each tier one supplier (e.g., prime contractor):",
+                        "parts": [
+                          {
+                            "id": "sr-13_smt.a.3.i",
+                            "name": "item",
+                            "props": [
+                              {
+                                "name": "label",
+                                "value": "i."
+                              }
+                            ],
+                            "prose": "Unique identifier for the procurement instrument (i.e., contract, task, or delivery order);"
+                          },
+                          {
+                            "id": "sr-13_smt.a.3.ii",
+                            "name": "item",
+                            "props": [
+                              {
+                                "name": "label",
+                                "value": "ii."
+                              }
+                            ],
+                            "prose": "Description of the supplied products and/or services;"
+                          },
+                          {
+                            "id": "sr-13_smt.a.3.iii",
+                            "name": "item",
+                            "props": [
+                              {
+                                "name": "label",
+                                "value": "iii."
+                              }
+                            ],
+                            "prose": "Program, project, and/or system that uses the supplier's products and/or services; and"
+                          },
+                          {
+                            "id": "sr-13_smt.a.3.iv",
+                            "name": "item",
+                            "props": [
+                              {
+                                "name": "label",
+                                "value": "iv."
+                              }
+                            ],
+                            "prose": "Assigned criticality level that aligns to the criticality of the program, project, and/or system (or component of system)."
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "sr-13_smt.b",
+                    "name": "item",
+                    "props": [
+                      {
+                        "name": "label",
+                        "value": "b."
+                      }
+                    ],
+                    "prose": "Review and update the supplier inventory {{ insert: param, sr-13_odp.02 }}."
+                  }
+                ]
+              },
+              {
+                "id": "sr-13_gdn",
+                "name": "guidance",
+                "prose": "Enterprises rely on numerous suppliers to execute their missions and functions. Many suppliers provide products and services in support of multiple missions, functions, programs, projects, and systems. Some suppliers are more critical than others, based on the criticality of missions, functions, programs, projects, systems that their products and services support, and the enterprise's level of dependency on the supplier. Enterprises should use criticality analysis to help determine which products and services are critical to determine the criticality of suppliers to be documented in the supplier inventory. See Section 2, Appendix C, and RA-9 for guidance on conducting criticality analysis."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

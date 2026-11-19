@@ -1,0 +1,996 @@
+{
+  "profile": {
+    "uuid": "011adc73-51df-4388-911c-795aadf95e5d",
+    "metadata": {
+      "title": "SL5 Standard for AI Security - Integrated Security Control Profile",
+      "last-modified": "2026-11-13T00:00:00.000Z",
+      "version": "0.1.3",
+      "oscal-version": "1.1.3",
+      "roles": [
+        {
+          "id": "creator",
+          "title": "Document Creator"
+        },
+        {
+          "id": "contact",
+          "title": "Contact"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "58d041e7-96f0-412a-8c44-9e6c4439820e",
+          "type": "organization",
+          "name": "Security Level 5",
+          "email-addresses": [
+            "standard@sl5.org"
+          ],
+          "links": [
+            {
+              "href": "https://sl5.org",
+              "rel": "homepage"
+            }
+          ]
+        }
+      ],
+      "responsible-parties": [
+        {
+          "role-id": "creator",
+          "party-uuids": [
+            "58d041e7-96f0-412a-8c44-9e6c4439820e"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "href": "https://standard.sl5.org/cite",
+          "rel": "citation"
+        },
+        {
+          "href": "https://creativecommons.org/licenses/by/4.0/",
+          "rel": "license"
+        },
+        {
+          "href": "https://standard.sl5.org/license",
+          "rel": "license-notice"
+        }
+      ],
+      "props": [
+        {
+          "name": "keywords",
+          "value": "AI Security, Frontier AI, Nation-State Security, NIST SP 800-53, NIST SP 800-161, Integrated Security Control Profile"
+        }
+      ],
+      "remarks": "The CC BY 4.0 grant applies to SL5-authored selections, parameter assignments, and supplemental guidance only. Imported or transcribed NIST material retains its NIST public-domain/CC0 provenance; see the linked license notice."
+    },
+    "imports": [
+      {
+        "href": "https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+        "include-controls": [
+          {
+            "with-ids": [
+              "ac-2",
+              "ac-2.13",
+              "ac-3",
+              "ac-3.2",
+              "ac-4",
+              "ac-4.15",
+              "ac-4.9",
+              "cm-7",
+              "cm-7.5",
+              "ia-3",
+              "ir-4",
+              "pe-19",
+              "pe-19.1",
+              "pe-2",
+              "pe-2.3",
+              "pe-3",
+              "pe-3.8",
+              "pm-12",
+              "ps-2",
+              "ps-3",
+              "ps-6",
+              "ra-3",
+              "sa-11",
+              "sa-17",
+              "sa-20",
+              "sa-21",
+              "sa-4",
+              "sc-12",
+              "sc-13",
+              "sc-15",
+              "sc-15.3",
+              "sc-28",
+              "sc-28.3",
+              "sc-29",
+              "sc-32",
+              "sc-49",
+              "sc-7",
+              "sc-7.10",
+              "sc-7.21",
+              "sc-8",
+              "sc-8.1",
+              "sc-8.5",
+              "si-3",
+              "si-3.10",
+              "si-4",
+              "si-7",
+              "si-7.10",
+              "si-7.15",
+              "si-7.9",
+              "sr-10",
+              "sr-11",
+              "sr-3",
+              "sr-3.1",
+              "sr-3.3",
+              "sr-5",
+              "sr-5.2",
+              "sr-6",
+              "sr-9",
+              "sr-9.1"
+            ]
+          }
+        ]
+      },
+      {
+        "href": "catalogs/NIST_SP-800-161r1-upd1_sr-13_catalog.json",
+        "include-controls": [
+          {
+            "with-ids": [
+              "sr-13"
+            ]
+          }
+        ]
+      }
+    ],
+    "modify": {
+      "set-parameters": [
+        {
+          "param-id": "ac-04_odp",
+          "values": [
+            "All external data must be isolated in staging area; transfer to internal systems permitted only for data that completes screening successfully; data that fails screening must be quarantined and prevented from transfer"
+          ]
+        },
+        {
+          "param-id": "ac-04.09_odp.01",
+          "values": [
+            "Data quarantined by automated detection systems (AC-4(15))"
+          ]
+        },
+        {
+          "param-id": "ac-04.09_odp.02",
+          "values": [
+            "Automated detection systems flag content as potentially malicious; detection systems encounter processing errors or ambiguous cases"
+          ]
+        },
+        {
+          "param-id": "ac-04.15_odp.01",
+          "values": [
+            "Adversarial content (poisoning attempts, jailbreak attempts, adversarial examples)"
+          ]
+        },
+        {
+          "param-id": "ia-03_odp.01",
+          "values": [
+            "AI accelerators within Weight Enclaves"
+          ]
+        },
+        {
+          "param-id": "ia-03_odp.02",
+          "values": [
+            "Local; remote; network connection"
+          ]
+        },
+        {
+          "param-id": "pe-02.03_odp.01",
+          "values": [
+            "Formal access authorizations for all information contained within the system"
+          ]
+        },
+        {
+          "param-id": "pe-03.08_odp",
+          "values": [
+            "All Red Zone entry and exit points"
+          ]
+        },
+        {
+          "param-id": "ps-02_odp",
+          "values": [
+            "Annually and upon significant changes to position duties or access requirements"
+          ]
+        },
+        {
+          "param-id": "ps-03_odp.01",
+          "values": [
+            "Rescreening frequency rises with a position's access, on the schedule the organization's vetting path sets, and a more sensitive position is never rescreened less often than a less sensitive one. Rescreen upon role change requiring a higher designation or upon triggering events from continuous monitoring."
+          ]
+        },
+        {
+          "param-id": "ps-06_odp.01",
+          "values": [
+            "Annually"
+          ]
+        },
+        {
+          "param-id": "ps-06_odp.02",
+          "values": [
+            "Upon a change in position designation, upon rescreening per PS-3, when agreements are updated, or annually"
+          ]
+        },
+        {
+          "param-id": "sc-07_odp",
+          "values": [
+            "Not applicable - SL5 Network contains no publicly accessible system components"
+          ]
+        },
+        {
+          "param-id": "sc-07.21_odp.01",
+          "values": [
+            "Weight Enclaves (air-gapped subnetworks hosting covered models and weight-accessing systems)"
+          ]
+        },
+        {
+          "param-id": "sc-07.21_odp.02",
+          "values": [
+            "Model training, inference, fine-tuning, mechanistic interpretability, and other operations requiring direct weight access"
+          ]
+        },
+        {
+          "param-id": "sc-08.01_odp",
+          "values": [
+            "Prevent unauthorized disclosure; detect changes"
+          ]
+        },
+        {
+          "param-id": "sc-08.05_odp.01",
+          "values": [
+            "Protected Distribution System per CNSSI 7003 [8]"
+          ]
+        },
+        {
+          "param-id": "sc-08.05_odp.02",
+          "values": [
+            "Prevent unauthorized disclosure; detect changes to information"
+          ]
+        },
+        {
+          "param-id": "sc-15.03_odp.01",
+          "values": [
+            "All systems and devices"
+          ]
+        },
+        {
+          "param-id": "sc-15.03_odp.02",
+          "values": [
+            "Red Zones"
+          ]
+        },
+        {
+          "param-id": "sc-28.03_odp.01",
+          "values": [
+            "Hardware-protected key store"
+          ]
+        },
+        {
+          "param-id": "sc-29_odp",
+          "values": [
+            "Inline network encryptors at facility boundaries (at least two encryptors from different suppliers per inter-facility connection)"
+          ]
+        },
+        {
+          "param-id": "sc-49_odp",
+          "values": [
+            "AI accelerator secure execution environment; host system"
+          ]
+        },
+        {
+          "param-id": "si-07.10_odp.01",
+          "values": [
+            "AI accelerators within Weight Enclaves"
+          ]
+        },
+        {
+          "param-id": "si-07.10_odp.02",
+          "values": [
+            "Cryptographic verification using manufacturer-provisioned keys; hardware-protected firmware storage"
+          ]
+        },
+        {
+          "param-id": "si-07.15_odp",
+          "values": [
+            "All code executing on AI accelerators within Weight Enclaves, including operator binaries"
+          ]
+        }
+      ],
+      "alters": [
+        {
+          "control-id": "ac-3.2",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Organizations define privileged commands and actions requiring dual authorization based on their operational context, with emphasis on operations involving covered models or cryptographic keys protecting them. Dual authorization reduces single-actor compromise risk, which is particularly important given the limitations of private-sector vetting against sophisticated adversaries. At least one person with the most sensitive designation (PS-2) must take part in dual authorization for weight operations.\n\nTechnical enforcement through cryptographic split-knowledge mechanisms or multi-party authorization workflows."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ac-4",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "External data may contain adversarial content including backdoor attacks in training data, jailbreak attempts in inference inputs, and malicious patterns in code (including inputs designed to compromise LLM-based code review or hardening systems). As models handle critical security engineering tasks and sensitive AI research, successful attacks could lead to sabotaged research, exfiltration of covered models, or compromised security outputs. Correlated supply chain attacks targeting both software and AI training data could amplify impact.\n\nThe organization enforces mandatory staging isolation: all external data is received into staging areas physically separated from internal systems. Transfer mechanisms enforce screening requirements, preventing bypass of the isolation boundary. Data remains isolated until automated screening validates it. This architecture prevents unscreened or malicious data from reaching internal systems."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ac-4.15",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Adversarial content designed to compromise AI models or data center operations constitutes unsanctioned information. Detection applies to all data that could be consumed as input by AI models: training datasets, evaluation data, prompts, code, configuration files, images, audio, video, and structured data. All supported modalities (text, images, video, audio, code, structured data) must be screened regardless of intended use.\n\nOrganizations determine detection thresholds through risk assessment (per RA-3), balancing false positives against false negatives. Risk-based tiering applies stricter thresholds to higher-risk data (e.g., training data, infrastructure code).\n\nDetection systems must resist adversarial bypass attacks. Robust adversarial content detection remains an open research problem; best-available defensive measures are insufficient against sophisticated adversaries. Organizations invest in research and development to advance detection capabilities, understanding that breakthroughs in adversarial robustness are necessary to fully address this threat. Section 1.3 highlights this as a key open question."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ac-4.9",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "The organization requires human review of quarantined data before making clearance or rejection decisions. The organization defines review scope based on operational capacity and false positive rates: either all quarantined data or a sample sufficient to validate detection effectiveness.\n\nHuman reviews provide oversight of automated detection, enabling identification of false positives, confirmation of true detections, and discovery of attack patterns not yet captured by automated mechanisms. Higher-risk data receives more intensive review."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "cm-7.5",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Weight Enclaves employ deny-all, permit-by-exception policies ensuring only vetted code executes with direct access to covered models. Authorized software undergoes testing and evaluation appropriate to the nation-state threat model (see SA-11) and cryptographic signing per SC-12 before deployment. Interactive coding environments are prohibited within Weight Enclaves; all code must complete testing and signing before enclave deployment.\n\nThe broader SL5 Network (outside Weight Enclaves) supports rapid prototyping and experimentation by enabling the execution of code that has not passed the full human review process. A primary use case is automated AI R&D where covered models generate and execute research experiments; these experiments execute in confined physical or virtual machine environments with limited privileges in the broader SL5 Network, not within Weight Enclaves. Organizations apply allow-by-exception principles for software executing outside confined environments, balancing development velocity with security."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ia-3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators authenticate using cryptographic mechanisms anchored in a hardware root of trust. For distributed operation, accelerators authenticate each other before exchanging data, without host-mediated trust.\n\nAccelerators support remote attestation: cryptographically proving their identity and configuration state to remote parties. Attestation enables data providers to verify they are communicating with a legitimate accelerator running authorized firmware before sending sensitive data. Boot measurements collected during secure boot are signed using hardware-protected keys, creating a cryptographic proof that can be verified without trusting the host."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "pe-19.1",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Red Zones implement TEMPEST emanations countermeasures informed by TEMPEST/1-92: RF shielding and dedicated power conditioning that prevent electromagnetic signal egress and power-line analysis [9], [17]. In addition, this standard requires that Red Zone shielding and power conditioning resist adversary-controlled active signals, including inbound signal injection used to influence system behavior, and that emissions policies define the permitted energy flows across each Red Zone boundary in both directions. See Section 2 (ICD 705 Facility Requirements) for construction details."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "pe-2.3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Unescorted Red Zone access requires both formal physical-access authorization and vetting in proportion to what the person can reach (PS-3). Wherever covered model weights or the keys protecting them can be reached, that vetting is for the most sensitive designation (PS-2). Two authorized individuals must be present at all times (two-person integrity). Anyone without both conditions, including vendors, requires continuous escort by an authorized person who meets them, with all activities logged."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "pe-3.8",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "All Red Zone entry points use access control vestibules (mantraps) with interlocking doors, multi-factor authentication, and anti-tailgating sensors. Mantraps prevent tailgating—following an authorized person through a door—and credential sharing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "pm-12",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Continuous monitoring gets more intensive as a position's access grows, from account auditing and, where the law allows, periodic criminal checks for the least sensitive positions to intensive monitoring of compartmented system interactions for the most sensitive. The organization keeps its own monitoring under a government partnership (PS-3); government vetting adds to it.\n\nThe insider threat program coordinates information security, personnel security, legal, HR, and physical security. Escalation triggers protective actions including access suspension (per AC-2(13)) when risk indicators emerge."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ps-2",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "The organization designates every position by risk, based on its access to covered models and security-critical infrastructure. Positions with custody of covered model weights or of the cryptographic keys protecting them receive the most sensitive designation. How positions are graded below that depends on the vetting path the organization uses (PS-3)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ps-3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Personnel with unescorted access to Weight Enclaves must be vetted in proportion to that access. Vetting for the most sensitive positions is an active area of research, and Security Level 5 is developing two paths to meet it [21].\n\nThe first is a formal government partnership that relies on existing government investigation and adjudication authorities. This provides the strongest assurance but requires government participation and may depend on new legal authority.\n\nThe second is the Sensitivity Levels (SenL) Framework, an industry-adapted vetting model that labs can deploy without government participation, though it would benefit greatly from government information-sharing. SenL classifies personnel into levels (SenL-1 through SenL-5) by the sensitivity of the access they hold.\n\nProvisional access during vetting requires compensating controls."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ps-6",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Access agreements get stricter as a position's access grows, within what the law allows. The organization keeps its own agreements under a government partnership (PS-3); government agreements add to them."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-11",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3]. Testing includes counterfeit detection, verification of component origins, examination of configuration settings, and physical inspection."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-17",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3]. Architecture decisions should address security and resilience considerations, including component selection strategies that enable availability through multiple supplier options."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-20",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for customized development of critical components where supply chain risk is unacceptable, including maintaining source code, build scripts, and tests to ensure continued maintenance capability."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-21",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for screening personnel with access to hardware development environments or critical components, including validation processes for both internal developers and key personnel from system integrators. External developer personnel are designated by risk in the same way as internal staff (PS-2)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-4",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI Accelerator Security Features: Acquisition contracts for AI accelerators specify hardware security features as functional requirements: integrated root-of-trust with hardware-provisioned identity (SC-28(3)), device-controlled memory isolation (SC-49), interconnect encryption (SC-8(1)), execution integrity verification (SI-7(9), SI-7(10), SI-7(15)), attestation capability (IA-3), and tamper protection (SR-9, SR-9(1)).\n\nThese features require advance engagement with chip providers—security features must be designed into silicon before tapeout. Organizations communicate requirements during architecture and design phases, not after chips are available, and include provisions for pre-acceptance assessment (SR-5(2)).\n\nShielded Rack Enclosures: Nation-state adversaries can extract sensitive information from electromagnetic emissions. Advanced AI models could potentially modulate EM emissions for covert communication. Facility-level shielding (per Section 2) protects the perimeter; shielded rack enclosures provide defense in depth or internal compartmentalization.\n\nShielded rack enclosures meeting the NSA 94-106 Figure 1 attenuation requirements at each of its test frequencies (1 kHz through 10 GHz) [10], or an equivalent verified design, are required for systems within Weight Enclaves processing covered models. Organizations may deploy shielded racks for other systems based on threat modeling."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-13",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "This standard requires post-quantum (quantum-resistant) cryptographic algorithms for inline network encryptors at inter-facility boundaries per SC-8(1); the specific algorithms are selected in accordance with current guidance from a recognized national cryptographic authority and are not fixed by this standard. Cryptographic uses and types for other contexts are specified by applicable frameworks and organizational policies (CNSSI 1253 requires NIST FIPS-compliant key-management processes for unclassified NSS [4]; CNSS Policy 15 requires NSA-approved cryptography to protect national security systems [27])."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-15.3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "No wireless devices or collaborative computing devices (cameras, microphones, video conferencing) are permitted in Red Zones. All equipment must be hardwired with wireless capabilities physically removed or disabled."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-28.3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators within Weight Enclaves provide a dedicated secure element for cryptographic keys used in encrypted data paths and attestation. The host system cannot access this key storage.\n\nHardware-provisioned identity keys (e.g., e-fuse keys embedded during manufacturing) serve as the accelerator’s unforgeable identity, enabling the accelerator to prove its identity to remote parties."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-29",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "The organization deploys at least two inline network encryptors from different suppliers in series for each inter-facility connection, consistent with the NSA “Rule of Two” [11]. Different suppliers means different manufacturers or companies producing the encryptors. This heterogeneity protects against supplier-specific implementation vulnerabilities in firmware, hardware design, key management implementations, or protocol handling. Supplier diversity alone does not provide cryptographic diversity: the two layers must not share a cryptographic hardness assumption, so each encryptor implements quantum-resistant protection from a different algorithm family (e.g., a lattice-based KEM in one layer and a symmetric pre-shared-key construction or code-based KEM in the other), ensuring a single cryptanalytic breakthrough cannot defeat both layers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-32",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Weight Enclaves constitute separate physical and logical domains within the SL5 Network. This partitioning protects covered models from unauthorized access by other SL5 Network components while enabling interactions through managed interfaces per SC-7(21). Separation is enforced through network segmentation, access controls, and physical isolation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-49",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators within Weight Enclaves implement hardware-enforced separation establishing the accelerator as an independent security domain from the host. The accelerator prevents memory access from the host to regions containing sensitive data via DMA or other mechanism. This configuration is controlled by the accelerator and not the host. The host cannot override these policies even with privileged access."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-7",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "The SL5 Network encompasses SL5 model development, training, and deployment operations. External network connections are prohibited to prevent unauthorized access and exfiltration while supporting SL5 activities.\n\nThe SL5 Network may span multiple physical locations connected through managed interfaces with encrypted channels. Network access locations implement physical security per PE family controls."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-7.10",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Organizations prevent exfiltration of covered models through physical bandwidth limitation on outbound flows from Weight Enclaves. Hardware-enforced rate limiting provides deterministic throughput caps that prevent weight exfiltration, even if attempts go undetected. This assumes covered models are substantially larger than required outputs crossing the boundary; if this assumption does not hold, alternative controls are required. Limits are calibrated based on model size and organizational threat model to make weight exfiltration infeasible within acceptable time scales.\n\nBoundary bandwidth may be preserved through multiple strategies: placing systems requiring high data volumes within the Weight Enclave per SC-7(21) to avoid boundary bandwidth consumption entirely, or minimizing outbound data volume by processing outputs within the Weight Enclave before transfer. Examples include stripping thinking tokens from inference responses, aggregating results, extracting only necessary information, or exfiltrating high-level experiment plans to be implemented by less capable models running in the broader SL5 Network.\n\nOrganizations implement additional exfiltration prevention mechanisms, such as bandwidth accounting and monitoring, detection and response capabilities per SI-4 and IR-4, monitoring for steganography, and traffic profile analysis. Physical bandwidth limitation serves as the hard cap that bounds exfiltration risk even if other mechanisms are bypassed or detection fails."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-7.21",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Weight Enclaves isolate systems requiring direct access to covered models within the SL5 Network. This isolation protects against weight exfiltration while enabling operations such as training, inference, fine-tuning, and mechanistic interpretability. Boundary protection mechanisms enable code deployment and API access while preventing weight exfiltration.\n\nEach Weight Enclave resides in a single physical facility. Multiple Weight Enclaves may be established at different facilities, but may not be directly connected via network. Transfers exceeding the Weight Enclave outbound bandwidth limit must occur via encrypted physical media with appropriate physical safeguards. This has significant implications for geographically distributed training; Section 1.3 highlights this as a key open question.\n\nSystems not requiring direct weight access operate outside Weight Enclaves, including lower-risk models. Weight Enclaves execute only authorized software (CM-7(5))."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-8.1",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Accelerator Interconnect Encryption: AI accelerators within Weight Enclaves cryptographically protect all data transmitted over chip-to-chip interconnects (e.g., NVLink, UALink, custom fabrics). Hardware-level encryption prevents interception from physical interconnects during distributed operation.\n\nInterconnect encryption protects data between accelerators; end-to-end encryption (where data arrives encrypted from origin and is re-encrypted before host-accessible export) protects data from host access at trust boundary crossings. Both are required. The accelerator must revoke host memory access before decrypting incoming data and complete encryption before restoring host access.\n\nInter-Facility Encryption: The organization implements cryptographic protection for all inter-facility network traffic within the SL5 Network using inline network encryptors deployed at facility boundaries. Inline network encryptors must implement post-quantum (quantum-resistant) cryptographic algorithms. The organization selects specific algorithms and parameters in accordance with current guidance from a recognized national cryptographic authority (e.g., NIST post-quantum cryptography standards or the NSA CNSA 2.0 suite [25], [26]); this standard does not mandate a specific algorithm. Whether or not FIPS-validated, each inline network encryptor must implement protections equivalent to the non-algorithm requirements of FIPS 140-3 Security Level 3 [28], including tamper-resistant and tamper-evident physical protection, identity-based operator authentication, self-tests, and secure management and zeroization of sensitive security parameters. Key management procedures must securely provision, synchronize where applicable, rotate, recover, revoke, and zeroize keys across corresponding endpoints; plaintext secret or private key entry or output requires a trusted channel and split knowledge. The organization deploys at least two inline network encryptors from different suppliers in series at each inter-facility connection per SC-29."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-8.5",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "All Weight Enclave network traffic leaving the Red Zone perimeter requires PDS per CNSSI 7003. Unlike standard SCIF requirements (which apply only to unencrypted traffic), SL5 requires PDS for all Weight Enclave traffic including encrypted inter-building connections."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "si-3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Adversarial content in AI model inputs (poisoned training data, jailbreak attempts, adversarial examples) is treated as malicious code. Standard malicious code protection mechanisms apply, including automated detection updates, alerting, and false positive handling."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "si-3.10",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "The organization retains samples of detected adversarial content for analysis to understand attack mechanisms and improve detection capabilities. Analysis techniques vary based on attack type and available research, as effective analysis methods for adversarial AI content remain an active research area.\n\nAnalysis results feed continuous improvement: updating detection systems, refining thresholds, and identifying detection vulnerabilities. The organization tracks attack patterns and collects indicators of compromise (IOCs) from internal detections and external threat intelligence sources, distributing IOCs to detection developers, reviewers, and security operations.\n\nThe organization tracks which data was screened with which detector versions to enable re-scanning when detection capabilities improve significantly."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "si-7.10",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators accept only manufacturer-signed firmware, verified using keys embedded in hardware during manufacturing. The accelerator rejects unsigned or incorrectly signed firmware even with full host system access.\n\nFirmware protection is essential because firmware implements all other security mechanisms. If an attacker can modify firmware, they can disable memory isolation, attestation, and encrypted data paths."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "si-7.15",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators verify that code is cryptographically signed before execution. This extends beyond firmware to operator binaries composing workload execution.\n\nThe organization ensures that approved workloads cannot be exploited by a compromised host to exfiltrate confidential information. Beyond verifying that individual operations do not leak data, this requires preventing composition attacks where small operations are sequenced to construct exfiltration channels.\n\nExample approaches include task sequence verification, where firmware ensures operations execute in an approved sequence preventing a host from constructing malicious workflows, and restricting workloads to fused kernels that have been verified to not exfiltrate data individually or through composition.\n\nOrganizations implement continuous attestation verification with tamper-evident logging."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "si-7.9",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators verify boot integrity using hardware-based mechanisms rooted in the hardware root-of-trust. Boot measurements are stored for attestation (IA-3), enabling remote verification that the accelerator booted with authorized firmware. Boot process verification for other system components is specified by applicable frameworks (CNSSI 1253 specifies boot integrity verification for all components that support it) and organizational policies."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-10",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for physical inspection of critical hardware components prior to initial use and periodically thereafter, using techniques such as radiographic examination, material analysis, and electrical testing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-11",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for prevention of counterfeit components through use of qualified bidders lists (QBL) and qualified manufacturers lists (QML). While not available to private companies unless contracting for the government, the Trusted Foundry program could be useful for some components if government cooperation is available [22]."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-13",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for maintaining a comprehensive, criticality-based inventory of all suppliers documenting supplier identities, products provided, and assigned risk levels."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-3.1",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for diversifying the supply base to eliminate single points of failure, particularly for critical components where feasible. Where market constraints limit supplier diversity, apply compensating supply chain risk mitigations."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-3.3",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for contractual flow-down of security requirements from prime contractors to relevant sub-tier contractors throughout the supply chain, with due diligence on upstream dependencies including fourth- and fifth-party suppliers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-5.2",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Organizations assess a sample of AI accelerators before acceptance to verify that hardware security features function as specified: that memory isolation prevents host access, attestation produces valid cryptographic proofs, and firmware verification rejects unsigned code."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-6",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Apply SP 800-161 Rev. 1 Update 1 guidance [3] for rigorous, continuous assessment of all suppliers against consistent baseline criteria evaluating security, integrity, resilience, quality, trustworthiness, and authenticity."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-9",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "AI accelerators within Weight Enclaves implement comprehensive tamper protection. Sensitive data must exist unencrypted during computation, making the compute cores attractive targets for physical attack. Tamper protection extends to all contexts where confidential data exists in plaintext—not just the root-of-trust components.\n\nSpecific mechanisms are determined based on threat model and risk assessment. Detection mechanisms identify tampering attempts; response mechanisms may include zeroization of sensitive data."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sr-9.1",
+          "adds": [
+            {
+              "position": "ending",
+              "parts": [
+                {
+                  "name": "sl5-guidance",
+                  "ns": "https://sl5.org/ns/oscal",
+                  "class": "sl5-supplemental-guidance",
+                  "prose": "Chip providers employ anti-tamper technologies throughout the accelerator development lifecycle, including design, manufacturing, and integration phases. An attacker who can modify the chip during manufacturing can install hardware backdoors that bypass all other security mechanisms."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Source PDFs are NOT committed: the RAND report's terms prohibit reposting
+# it online, and the SL5 paper is already represented by its text dump.
+# Re-fetch with the commands in data/SOURCES.md.
+data/raw/*.pdf
+
+# OS / editors
+.DS_Store
+*.swp
+*~
+
+# Sprint-weekend working files (kept local until the report is final)
+results/*.tmp
